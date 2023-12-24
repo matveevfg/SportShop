@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Order</title>
+</head>
+<body>
+<h1>Edit Order</h1>
+<form action="#" th:action="@{/orders/edit/{id}(id=${order.id})}" method="post">
+    <input type="hidden" th:field="${order.id}">
+    <label>Customer:</label>
+    <input type="text" th:field="${order.customer}">
+    <label>Product:</label>
+    <input type="text" th:field="${order.product}">
+    <label>Quantity:</label>
+    <input type="number" th:field="${order.quantity}">
+    <label>Total Price:</label>
+    <input type="number" step="0.01" th:field="${order.totalPrice}">
+    <button type="submit">Save</button>
+</form>
+</body>
+</html>
